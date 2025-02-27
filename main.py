@@ -6,7 +6,7 @@ import tempfile
 import subprocess
 import time
 
-TOKEN = '7917678425:AAE9NEquKilpIbULcIiBf4v_F1Pp3yTC0vQ'
+TOKEN = 'Your Token'
 PRINTER_NAME = "EPSON L3250 Series"
 
 async def start(update: Update, context):
