@@ -6,8 +6,8 @@ import tempfile
 import subprocess
 import time
 
-TOKEN = 'Your telegram bot token'
-PRINTER_NAME = "Your printer model"
+TOKEN = ''
+PRINTER_NAME = ""
 
 async def start(update: Update, context):
     await update.message.reply_text("Olá, sou seu bot! Como posso te ajudar?")
@@ -32,7 +32,7 @@ async def handle_document(update: Update, context):
     
  
 def print_document(file_path):
-    sumatra_path = r"Path to Sumatra in your desktop"
+    sumatra_path = r"C:\Users\Samsung\OneDrive\Desktop\SumatraPDF.lnk"
     try:
         print("Enviando para impressão...")
         subprocess.run([sumatra_path, "-print-to", PRINTER_NAME, file_path], check=True)
