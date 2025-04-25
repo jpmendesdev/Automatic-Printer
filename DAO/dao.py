@@ -23,14 +23,13 @@ def create_document(name, file_data):
         print(f"Documento '{name}' inserido com sucesso, ID: {cursor.lastrowid}")
     except Exception as e:
         print("Erro ao inserir documento:", e)
-    cursor.close()
-    conexao.close()
     
-def read_document(document_id, output_Path):
+def read_document(document_name, output_Path):
     try:
-        sql = "SELECT name, file_data FROM documents WHERE id = %s"
-        cursor.execute(sql, (document_id,))
+        sql = "SELECT name, file_data FROM documents WHERE name = %s"
+        cursor.execute(sql, (document_name,))
         result = cursor.fetchone()
+        
         if result:
             name, binary_data = result
             with open(output_Path, 'wb') as file:
